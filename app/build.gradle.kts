@@ -7,6 +7,10 @@ android {
     namespace = "com.gorkemoji.nfctoolkit"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.gorkemoji.nfctoolkit"
         minSdk = 24
