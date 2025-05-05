@@ -1,10 +1,8 @@
 package com.gorkemoji.nfctoolkit
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.gorkemoji.nfctoolkit.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.readButton.setOnClickListener { startActivity(Intent(this, ReadActivity::class.java)) }
+        binding.writeButton.setOnClickListener { startActivity(Intent(this, WriteActivity::class.java)) }
     }
 }
