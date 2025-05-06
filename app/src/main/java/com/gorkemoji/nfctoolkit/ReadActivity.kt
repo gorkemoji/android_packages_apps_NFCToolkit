@@ -1,10 +1,13 @@
 package com.gorkemoji.nfctoolkit
 
+import android.content.Context
 import android.content.Intent
 import android.nfc.NfcAdapter
 import android.nfc.Tag
 import android.os.Bundle
 import android.os.Handler
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.provider.Settings
 import android.view.View
 import android.widget.Toast
@@ -13,8 +16,8 @@ import com.gorkemoji.nfctoolkit.databinding.ActivityReadBinding
 import androidx.core.view.isVisible
 
 class ReadActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
-    private var nfcAdapter: NfcAdapter? = null
     private lateinit var binding: ActivityReadBinding
+    private var nfcAdapter: NfcAdapter? = null
     private var blinkHandler: Handler? = null
     private var blinkRunnable: Runnable? = null
 
@@ -45,21 +48,35 @@ class ReadActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
             }
         }
         blinkHandler?.post(blinkRunnable!!)
-
-
     }
 
     override fun onTagDiscovered(tag: Tag?) {
+        tag ?: return
+
         runOnUiThread {
-            binding.title.text = "Detected a tag!"
-            binding.headerText.text = "Your device detected a tag. You can see the details below."
+            vibrateOnTagRead()
+            binding.title.text = getString(R.string.detected_a_tag)
+            binding.headerText.text = getString(R.string.tag_information_text)
             binding.nfcIcon.visibility = View.GONE
             binding.contentText.visibility = View.VISIBLE
             binding.contentDesc.visibility = View.VISIBLE
-            binding.contentDesc.text = tag.toString()
             blinkHandler?.removeCallbacks(blinkRunnable!!)
         }
+
+        val tagId = tag.id?.joinToString(":") { String.format("%02X", it) } ?: getString(R.string.unknown_id)
+        val techList = tag.techList.joinToString(", ")
+
+        val info = getString(R.string.tag_id) + ": " + tagId + "\n" + getString(R.string.supported_tech) + ": " + techList
+
+        runOnUiThread { binding.contentDesc.text = info }
     }
+
+    private fun vibrateOnTagRead() {
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+        else vibrator.vibrate(200)
+    }
+
 
     override fun onResume() {
         super.onResume()

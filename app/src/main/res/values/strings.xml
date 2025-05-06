@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">NFC Toolkit</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_desc">What would you like to do today?</string>
+    <string name="read_a_tag">Read a tag</string>
+    <string name="touch_on_a_tag">Please touch your device on a tag.</string>
+    <string name="content">Content:</string>
+    <string name="nfc_icon">NFC icon</string>
+    <string name="write_to_a_tag">Write to a tag</string>
+    <string name="detected_a_tag">Detected a tag!</string>
+    <string name="tag_information_text">Tag information is shown below.</string>
+    <string name="supported_tech">Supported Technologies</string>
+    <string name="tag_id">Tag ID</string>
+    <string name="unknown_id">Unknown ID</string>
 </resources>
