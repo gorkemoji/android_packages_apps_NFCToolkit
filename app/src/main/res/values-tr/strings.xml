@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFC Araç Kiti</string>
+    <string name="welcome">Hoş Geldiniz</string>
+    <string name="welcome_desc">Bugün ne yapmak istersiniz?</string>
+    <string name="read_a_tag">Etiket oku</string>
+    <string name="touch_on_a_tag">Lütfen cihazınızı bir etikete dokundurun.</string>
+    <string name="content">İçerik:</string>
+    <string name="nfc_icon">NFC ikonu</string>
+    <string name="write_to_a_tag">Bir etikete yaz</string>
+    <string name="detected_a_tag">Bir etiket algılandı!</string>
+    <string name="tag_information_text">Etiket bilgisini aşağıda görebilirsiniz.</string>
+    <string name="supported_tech">Desteklenen Teknolojiler</string>
+    <string name="tag_id">Etiket ID\'si</string>
+    <string name="unknown_id">Bilinmeyen ID</string>
+    <string name="data_type">Veri tipi</string>
+    <string name="data_content">Veri içeriği</string>
+    <string name="plain_text">Düz metin</string>
+    <string name="format_the_tag">Etiketi biçimlendir</string>
+    <string name="application">Uygulama</string>
+    <string name="write_to_the_tag">Etikete yaz</string>
+    <string name="actions">Eylemler</string>
+    <string name="format_success">Etiket biçimlendirildi</string>
+    <string name="format_fail">Biçimlendirme başarısız</string>
+    <string name="read_failed">Okuma başarısız</string>
+    <string name="read_success">Etiket başarıyla okundu</string>
+    <string name="write_fail_too_large">Çok büyük veri</string>
+    <string name="write_success">Veri başarıyla yazıldı</string>
+    <string name="write_fail_not_writable">Etiket yazılabilir değil</string>
+    <string name="write_fail">Yazma başarısız</string>
+    <string name="invalid_url">Hatalı URL</string>
+</resources>

@@ -65,7 +65,7 @@
         android:layout_marginBottom="24dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/nfc_icon"
-        android:src="@drawable/ic_touch_to_tag"
+        android:src="@drawable/ic_touch_to_tag_48"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

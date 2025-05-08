@@ -41,6 +41,17 @@ class NfcPromptBottomSheet : BottomSheetDialogFragment() {
         binding.nfcIcon.visibility = View.VISIBLE
     }
 
+    fun changeDialog(message: String, iconResId: Int, onFinish: (() -> Unit)? = null) {
+        stopBlinking()
+        binding.nfcIcon.setImageResource(iconResId)
+        binding.nfcPromptText.text = message
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            dismissSafely()
+            onFinish?.invoke()
+        }, 750)
+    }
+
     override fun onStart() {
         super.onStart()
         startBlinking()

@@ -11,10 +11,10 @@
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:contentDescription="@string/nfc_icon"
-        android:src="@drawable/ic_touch_to_tag"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_touch_to_tag_48"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:tint="?colorSecondary" />
 
     <TextView

@@ -66,16 +66,17 @@ class ReadActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
         enableReaderMode()
     }
 
-    private fun hidePrompt() {
-        bottomSheet?.dismissSafely()
-        nfcAdapter?.disableReaderMode(this)
-    }
-
     override fun onTagDiscovered(tag: Tag?) {
         if (bottomSheet?.isVisible != true) return
-        tag ?: return
 
-        hidePrompt()
+        if (tag == null) {
+            runOnUiThread {
+                bottomSheet?.changeDialog(getString(R.string.read_failed), R.drawable.ic_error_48) {
+                    disableReaderMode()
+                }
+            }
+            return
+        }
 
         runOnUiThread {
             vibrateOnTagRead()
@@ -85,14 +86,21 @@ class ReadActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
             binding.contentDesc.visibility = View.VISIBLE
         }
 
-        val tagId = tag.id?.joinToString(":") { String.format("%02X", it) } ?: getString(R.string.unknown_id)
+        val tagId = tag.id?.joinToString(":") { String.format("%02X", it) }
+            ?: getString(R.string.unknown_id)
         val techList = tag.techList.joinToString(", ")
-        val info = getString(R.string.tag_id) + ": " + tagId + "\n" + getString(R.string.supported_tech) + ": " + techList
+        val info =
+            getString(R.string.tag_id) + ": " + tagId + "\n" + getString(R.string.supported_tech) + ": " + techList
 
-        runOnUiThread { binding.contentDesc.text = info }
+        runOnUiThread {
+            binding.contentDesc.text = info
+            bottomSheet?.changeDialog(getString(R.string.read_success), R.drawable.ic_done_48) {
+                disableReaderMode()
+            }
+        }
     }
 
-
+    private fun disableReaderMode() { nfcAdapter?.disableReaderMode(this) }
 
     private fun vibrateOnTagRead() {
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator

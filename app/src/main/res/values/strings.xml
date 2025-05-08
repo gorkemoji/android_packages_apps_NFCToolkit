@@ -15,11 +15,18 @@
     <string name="data_type">Data type</string>
     <string name="data_content">Data content</string>
     <string name="plain_text">Plain text</string>
-    <string name="url">URL</string>
+    <string name="url" translatable="false">URL</string>
     <string name="format_the_tag">Format the tag</string>
     <string name="application">Application</string>
     <string name="write_to_the_tag">Write to the tag</string>
     <string name="actions">Actions</string>
     <string name="format_success">Tag successfully formatted</string>
     <string name="format_fail">Format failed</string>
+    <string name="read_failed">Read failed</string>
+    <string name="read_success">Tag successfully read</string>
+    <string name="write_fail_too_large">Too large data</string>
+    <string name="write_success">Data successfully written</string>
+    <string name="write_fail_not_writable">Tag is not writable</string>
+    <string name="write_fail">Write failed</string>
+    <string name="invalid_url">Invalid URL</string>
 </resources>
