@@ -11,6 +11,8 @@ import android.nfc.tech.NdefFormatable
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.provider.Settings
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.gorkemoji.nfctoolkit.databinding.ActivityWriteBinding
@@ -29,6 +31,15 @@ class WriteActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this)
+
+        if (nfcAdapter == null) {
+            Toast.makeText(this, getString(R.string.nfc_not_available), Toast.LENGTH_SHORT).show()
+            finish()
+            return
+        } else if (nfcAdapter?.isEnabled == false) {
+            Toast.makeText(this, getString(R.string.nfc_disabled), Toast.LENGTH_SHORT).show()
+            startActivity(Intent(Settings.ACTION_NFC_SETTINGS))
+        }
 
         pendingIntent = PendingIntent.getActivity(
             this,

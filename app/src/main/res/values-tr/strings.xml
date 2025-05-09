@@ -29,4 +29,6 @@
     <string name="write_fail_not_writable">Etiket yazılabilir değil</string>
     <string name="write_fail">Yazma başarısız</string>
     <string name="invalid_url">Hatalı URL</string>
+    <string name="nfc_not_available">Cihazınızda NFC bulunmuyor.</string>
+    <string name="nfc_disabled">Cihazınızda NFC kapalı.</string>
 </resources>

@@ -29,11 +29,11 @@ class ReadActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
         nfcAdapter = NfcAdapter.getDefaultAdapter(this)
 
         if (nfcAdapter == null) {
-            Toast.makeText(this, "NFC is not available on this device", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.nfc_not_available), Toast.LENGTH_SHORT).show()
             finish()
             return
         } else if (nfcAdapter?.isEnabled == false) {
-            Toast.makeText(this, "NFC is disabled. Enable it to use this app", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.nfc_disabled), Toast.LENGTH_SHORT).show()
             startActivity(Intent(Settings.ACTION_NFC_SETTINGS))
         }
 
