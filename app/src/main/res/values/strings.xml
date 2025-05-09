@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">NFC Toolkit</string>
     <string name="welcome">Welcome</string>
-    <string name="welcome_desc">What would you like to do today?</string>
+    <string name="welcome_desc">You can read various tags\' IDs, technologies, format and write plain texts and URLs to supported tags with NFC Toolkit. Are you ready to start?</string>
     <string name="read_a_tag">Read a tag</string>
     <string name="touch_on_a_tag">Please touch your device on a tag.</string>
     <string name="content">Content:</string>

@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">NFC Araç Kiti</string>
     <string name="welcome">Hoş Geldiniz</string>
-    <string name="welcome_desc">Bugün ne yapmak istersiniz?</string>
-    <string name="read_a_tag">Etiket oku</string>
+    <string name="welcome_desc">NFC Araç Kiti ile çeşitli kartların ID\'lerini, desteklediği teknolojileri okuyabilir, desteklenen etiketleri biçimlendirip düz metinler ve URL yazabilirsiniz. Başlamaya hazır mısınız?</string>
+    <string name="read_a_tag">Bir etiket oku</string>
     <string name="touch_on_a_tag">Lütfen cihazınızı bir etikete dokundurun.</string>
     <string name="content">İçerik:</string>
     <string name="nfc_icon">NFC ikonu</string>
