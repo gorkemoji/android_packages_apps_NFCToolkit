@@ -13,25 +13,25 @@
 
 <table>
   <tr>
-    <td> <img src="./screenshots/touchtotag.jpg" height="400px" width="200px" /></td>
+    <td> <img src="./screenshots/touchtotag.jpg" height="640px" width="360px" /></td>
    </tr> 
 </table>
 
 <table>
   <tr>
-    <td> <img src="./screenshots/read.jpg" height="400px" width="200px" /></td>
+    <td> <img src="./screenshots/read.jpg" height="640px" width="360px" /></td>
    </tr> 
 </table>
 
 <table>
   <tr>
-    <td> <img src="./screenshots/format.jpg" height="400px" width="200px" /></td>
+    <td> <img src="./screenshots/format.jpg" height="640px" width="360px" /></td>
    </tr> 
 </table>
 
 <table>
   <tr>
-    <td> <img src="./screenshots/write.jpg" height="400px" width="200px" /></td>
+    <td> <img src="./screenshots/write.jpg" height="640px" width="360px" /></td>
    </tr> 
 </table>
 
