@@ -45,6 +45,6 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/gorkemoji/nfc-toolkit.git
+   git clone https://github.com/gorkemoji/android_packages_apps_NFCToolkit.git
 
 2. Open with Android Studio and press run button!
